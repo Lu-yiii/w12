@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>響應式網頁範例</title>
+  <style>
+    /* 預設樣式 */
+    .headline {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .desktop-menu {
+      text-align: center;
+      display: block;
+    }
+
+    .mobile-menu {
+      text-align: center;
+      display: none;
+    }
+
+    .list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      background-color: pink;
+      flex: 1 1 280px;
+      margin: 10px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* 桌機版樣式 */
+    @media only screen and (min-width: 1250px) {
+      .desktop-menu {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: none;
+      }
+
+      .list {
+        flex-wrap: wrap;
+      }
+
+      .item {
+        width: 280px;
+      }
+    }
+
+    /* 手機版樣式 */
+    @media only screen and (max-width: 500px) {
+      .headline {
+        font-size: 20px;
+      }
+
+      .desktop-menu {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .list {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .item {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="headline">這是一個回應式網頁設計文字過長的範例</div>
+  <div class="desktop-menu">選項一、選項二、選項三、選項四、選項五、選項六</div>
+  <div class="mobile-menu">
+    <img src="1.png" width="30" height="30" alt="選單圖示" />
+  </div>
+  <div class="list">
+    <div class="item">
+      <img src="海綿寶寶.png" alt="海綿寶寶">
+      <div>海綿寶寶</div>
+    </div>
+    <div class="item">
+      <img src="派大星.png" alt="派大星">
+      <div>派大星</div>
+    </div>
+    <div class="item">
+      <img src="章魚哥.png" alt="章魚哥">
+      <div>章魚哥</div>
+    </div>
+    <div class="item">
+      <img src="謝老闆.png" alt="蟹老闆">
+      <div>蟹老闆</div>
+    </div>
+  </div>
+</body>
+</html>
